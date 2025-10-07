@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Declares the document type as HTML5 -->
+
+<html lang="en">
+  <!-- Sets the language of the document to English -->
+
+  <head>
+    <!-- Head section contains metadata and links to external resources -->
+
+    <meta charset="UTF-8" />
+    <!-- Specifies the character encoding as UTF-8 for universal character support -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures responsive design by setting the viewport to match the device's width -->
+
+    <title>Container Spacing</title>
+    <!-- Sets the title of the webpage shown in the browser tab -->
+
+    <!-- Loads TailwindCSS via CDN for styling using utility classes -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+    <!-- NOTE: This script tag references a Tailwind-related package,
+         but it's not the standard way to load TailwindCSS in the browser.
+         Typically, you'd use: <script src="https://cdn.tailwindcss.com"></script> -->
+  </head>
+
+  <body class="p-10">
+    <!-- Adds padding of 2.5rem (40px) around the entire body -->
+
+    <h1>1. Margin</h1>
+    <!-- Section heading for margin examples -->
+
+    <div class="m-4 bg-yellow-100">
+      <!-- Applies margin of 1rem (16px) on all sides; yellow background -->
+      <h4>Margin all around</h4>
+    </div>
+
+    <div class="mx-10 bg-pink-200">
+      <!-- Applies horizontal margin (left and right) of 2.5rem (40px); pink background -->
+      <h4>Margin X axes</h4>
+    </div>
+
+    <div class="my-4 bg-purple-200">
+      <!-- Applies vertical margin (top and bottom) of 1rem (16px); purple background -->
+      <h4>Margin Y axes</h4>
+    </div>
+
+    <div class="mt-4 bg-red-300">
+      <!-- Applies top margin of 1rem (16px); red background -->
+      <h4>Margin Top</h4>
+    </div>
+
+    <div class="mr-5 bg-orange-400">
+      <!-- Applies right margin of 1.25rem (20px); orange background -->
+      <h4>Margin Right</h4>
+    </div>
+
+    <div class="mb-4 bg-slate-400">
+      <!-- Applies bottom margin of 1rem (16px); slate gray background -->
+      <h4>Margin Bottom</h4>
+    </div>
+
+    <div class="ml-10 bg-blue-300">
+      <!-- Applies left margin of 2.5rem (40px); blue background -->
+      <h4>Margin Left</h4>
+    </div>
+
+    <br />
+    <!-- Line break for spacing -->
+    <hr />
+    <!-- Horizontal rule for visual separation -->
+    <br />
+
+    <h1>2. Arbitrary Spacing</h1>
+    <!-- Section heading for custom spacing values -->
+
+    <div class="m-[50px] bg-slate-700 text-white">
+      <!-- Applies custom margin of 50px on all sides; dark slate background with white text -->
+      Margin all around
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <h1>3. Padding</h1>
+    <!-- Section heading for padding examples -->
+
+    <div class="bg-lime-100 p-5">
+      <!-- Applies padding of 1.25rem (20px) on all sides; light lime background -->
+      Padding all around
+    </div>
+
+    <div class="bg-lime-200 px-5">
+      <!-- Applies horizontal padding of 1.25rem (20px); lime background -->
+      Padding X Axis
+    </div>
+
+    <div class="bg-lime-300 py-5">
+      <!-- Applies vertical padding of 1.25rem (20px); lime background -->
+      Padding Y Axis
+    </div>
+
+    <div class="bg-lime-400 pt-5">
+      <!-- Applies top padding of 1.25rem (20px); lime background -->
+      Padding Top
+    </div>
+
+    <div class="bg-lime-500 pr-5">
+      <!-- Applies right padding of 1.25rem (20px); lime background -->
+      Padding Right
+    </div>
+
+    <div class="bg-lime-600 pb-5">
+      <!-- Applies bottom padding of 1.25rem (20px); lime background -->
+      Padding Bottom
+    </div>
+
+    <div class="bg-lime-700 pl-5">
+      <!-- Applies left padding of 1.25rem (20px); lime background -->
+      Padding Left
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <h1>4. Space Between X</h1>
+    <!-- Section heading for horizontal spacing between flex items -->
+
+    <div class="flex space-x-6">
+      <!-- Creates a horizontal flex container with 1.5rem (24px) space between items -->
+      <div class="bg-teal-300 p-2">01</div>
+      <!-- Teal background with padding -->
+      <div class="bg-teal-400 p-2">02</div>
+      <div class="bg-teal-500 p-2">03</div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <h1>5. Space Between Y</h1>
+    <!-- Section heading for vertical spacing between flex items -->
+
+    <div class="flex-col space-y-6">
+      <!-- Creates a vertical flex container with 1.5rem (24px) space between items -->
+      <div class="bg-teal-300 p-2">01</div>
+      <!-- Teal background with padding -->
+      <div class="bg-teal-400 p-2">02</div>
+      <div class="bg-teal-500 p-2">03</div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+  </body>
+</html>
