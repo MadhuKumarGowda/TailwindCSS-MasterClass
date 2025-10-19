@@ -1,17 +1,103 @@
+<!--
+    File: /Users/madhugowda/Projects/Websites/TailwindcssProject/Fundamentals/04.Sizing/index.html
+    Author: Madhu Gowda (madhugowda)
+    Created: 2025-10-19
+    Purpose:
+      This document demonstrates sizing utilities and patterns using Tailwind CSS.
+      It contains examples and reference markup for width, height, min/max sizing,
+      aspect ratios, responsive sizing, container behavior, and utility combinations
+      commonly used in the Fundamentals > Sizing module.
+
+    Scope:
+      - Illustrative examples for teaching and quick reference.
+      - Intended for use in a learning project (Tailwind Fundamentals).
+      - Not intended as production-ready UI; examples focus on utility usage.
+
+    Prerequisites:
+      - Tailwind CSS v3+ must be available (via CDN for quick preview or a local
+        build pipeline using PostCSS/Tailwind CLI).
+      - Basic HTML knowledge and familiarity with Tailwind utility classes.
+
+    Usage:
+      - For quick preview, include the Tailwind CDN link in the page head.
+      - For local development with a build step, include the compiled Tailwind CSS
+        output (configured via tailwind.config.js) and rebuild after config changes.
+      - Examples can be copied into other pages as-is when using the same Tailwind setup.
+
+    Structure (high level):
+      - Header / Title: brief description and context.
+      - Section: Width examples (w-*, max-w-*, min-w-*)
+      - Section: Height examples (h-*, max-h-*, min-h-*)
+      - Section: Aspect ratio and intrinsic sizing (aspect-w/h or aspect-[value])
+      - Section: Responsive variations (sm:, md:, lg:, xl:)
+      - Section: Practical patterns (centered boxes, fluid containers, card sizing)
+      - Footer / Notes: accessibility and customization tips.
+
+    Conventions & Notes:
+      - Use semantic HTML elements (header, main, section, article, footer) for
+        accessibility and maintainability.
+      - Prefer utility-first classes for layout; extract repeating patterns into
+        components or @apply in your CSS when necessary.
+      - Keep responsive rules mobile-first (apply base styles, then sm:, md:, etc.).
+      - When creating fixed-size elements, provide alternatives for small viewports.
+
+    Accessibility:
+      - Ensure interactive elements (buttons, links) have accessible names (aria-label,
+        visible text).
+      - Avoid relying on size alone to convey meaning; add text or aria attributes
+        as needed.
+      - Ensure contrast and focus visibility for sized controls and containers.
+
+    Customization:
+      - Tailwind config (tailwind.config.js) can extend spacing, sizing scales,
+        and custom utilities to match design tokens and consistent sizing across the app.
+      - Consider adding named sizes (e.g., 'card-md') in theme.extend.sizing for reuse.
+
+    Testing & Validation:
+      - Test examples across common viewport sizes and device emulators.
+      - Verify behavior when custom fonts or global box-sizing are applied.
+
+    Change log template:
+      - 2025-10-19: Initial file created by Madhu Gowda (sizing examples and notes).
+      - [YYYY-MM-DD]: [Contributor] - [Summary of changes]
+
+    Contact:
+      - For questions about the examples or Tailwind configuration, contact the repo owner
+        or open an issue in the project tracking system.
+
+    License:
+      - Use and adapt examples under your project's licensing terms. No third-party
+        copyrighted assets are included.
+
+    -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Document metadata -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sizing Demo</title>
-    <!-- Loads TailwindCSS via CDN for styling using utility classes -->
+    <!-- Loads Tailwind CSS via CDN for styling using utility classes.
+         Replace with your local build output when using a Tailwind pipeline. -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
   </head>
   <body class="p-4">
+    <!-- Page title -->
     <h1 class="text-5xl">Sizing</h1>
+
     <br />
+
+    <!--
+      Section 1: Fixed width utilities
+      Demonstrates Tailwind's w-{size} utilities. Sizes like w-1, w-2 map to
+      the spacing scale (usually rem-based). w-full expands to the container width.
+      Note: container element class is misspelled as "contaner" below — if you
+      intended the Tailwind container utility, change it to "container".
+    -->
     <h3>1. Width all around</h3>
     <div class="contaner bg-red-400 p-2 mb-5">
+      <!-- Each child shows a different fixed width (very small -> larger -> full) -->
       <div class="bg-teal-700 m-1 w-0">0</div>
       <div class="bg-teal-700 m-1 w-1">1: 4px width</div>
       <div class="bg-teal-700 m-1 w-1.5">1.5: 6px width</div>
@@ -24,8 +110,14 @@
       <div class="bg-teal-700 m-1 w-8">8</div>
       <div class="bg-teal-700 m-1 w-full">full</div>
     </div>
+
     <hr />
     <br />
+
+    <!--
+      Section 2: Percentage / fraction widths
+      Use w-1/2, w-1/3, etc. for fractional widths based on the parent element.
+    -->
     <h3>2. Percentage</h3>
     <div class="contaner bg-yellow-400 p-2 mb-5">
       <div class="bg-green-500 p-2 mb-4 w-1/2">1/2 : half of the width</div>
@@ -35,8 +127,15 @@
       <div class="bg-green-500 p-2 mb-4 w-3/4">3/4 : width</div>
       <div class="bg-green-500 p-2 mb-4 w-1/5">1/5 : width</div>
     </div>
+
     <hr />
     <br />
+
+    <!--
+      Section 3: Max-width utilities
+      Demonstrates max-w-{size} classes which constrain the element's maximum width.
+      Useful for readable text blocks and responsive cards.
+    -->
     <h3>3. Max Width</h3>
     <div class="contaner bg-pink-400 p-2 mb-5">
       <div class="bg-white p-2 mb-4 max-w-sm">
@@ -47,6 +146,7 @@
         perspiciatis libero, quo dolorum quae reiciendis? Labore quibusdam ea
         quos modi dolor! Rerum cumque deserunt deleniti.
       </div>
+
       <div class="bg-white p-2 mb-4 max-w-md">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
         nemo quo illum dignissimos? Expedita ipsum inventore atque odit,
@@ -55,6 +155,7 @@
         eligendi laborum sequi qui maiores dolorum distinctio quasi cupiditate
         minima vel accusantium. Quisquam, facilis reprehenderit?
       </div>
+
       <div class="bg-white p-2 mb-4 max-w-lg">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quidem,
         in nam veniam aliquam nulla laboriosam voluptatibus nisi quisquam ab?
@@ -63,6 +164,7 @@
         aut at? Qui, odit praesentium? Voluptate dolor atque qui, aliquid soluta
         expedita!
       </div>
+
       <div class="bg-white p-2 mb-4 max-w-xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea natus cum
         placeat, nulla harum nam quidem sit architecto error, explicabo
@@ -71,6 +173,7 @@
         adipisci quos eligendi ipsa quae, inventore numquam quas consequatur ut
         accusamus!
       </div>
+
       <div class="bg-white p-2 mb-4 max-w-2xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, nulla
         deleniti itaque in fugit nam recusandae soluta vitae totam quo
@@ -78,6 +181,7 @@
         ducimus facilis magni illo libero? Beatae iusto totam tenetur. Iusto,
         repellendus ut.
       </div>
+
       <div class="bg-white p-2 mb-4 max-w-full">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
         distinctio tempore libero necessitatibus perferendis sed magnam repellat
@@ -86,24 +190,46 @@
         nesciunt sint velit, inventore quod ipsam.
       </div>
     </div>
+
     <hr />
     <br />
+
+    <!--
+      Section 4: Viewport-based widths (VW) and full-width examples.
+      Add examples like w-[50vw], w-screen, or responsive rules (sm:, md:) here.
+    -->
     <h3>4. Width with Viewport</h3>
-    <hr />
-    <br />
-    <h3>5. Arbitrary Width</h3>
-    <hr />
-    <br />
-    <h3>6. Min height</h3>
-    <hr />
-    <br />
+    <h1 class="mt-5">VW and Width 100%</h1>
+    <div class="bg-green-500 my-5 p-5 w-screen">VW and Screen width</div>
+    <div class="bg-orange-500 my-5 p-5 w-full">Width 100% and w-full</div>
+    <div class="bg-teal-500 text-white my-5 p-5 w-[500px]">Arbitary width</div>
+
+    <!-- Placeholder for additional sections: max-height, fullscreen height, auto width -->
     <h3>7. Max Height</h3>
+    <div class="flex item-end mt-2 mb-10">
+      <div class="bg-indigo-400 ml-5 h-24">Height of 24</div>
+      <div class="bg-indigo-400 ml-5 h-32">Height of 32</div>
+      <div class="bg-indigo-400 ml-5 h-40">Height of 40</div>
+      <div class="h-[150px] bg-orange-400 mb-5">
+        <div class="m-20 bg-yellow-400 max-h-full">Max Height Full</div>
+      </div>
+    </div>
+    <hr />
+    <br />
+    <h3>7.1 Min Height</h3>
+    <div class="flex item-end mt-2 mb-10">
+      <div class="bg-indigo-400 ml-5 p-5 h-[100px]">
+        <div class="min-h-full bg-teal-400">Take Full Height</div>
+      </div>
+    </div>
     <hr />
     <br />
     <h3>8. Fullscreen height</h3>
+    <div class="bg-pink-300 mb-4 h-screen">height full screen</div>
     <hr />
     <br />
     <h3>9. Width Auto</h3>
+    <div class="bg-green-400 p-5 w-auto">Auto Width</div>
     <hr />
     <br />
   </body>
