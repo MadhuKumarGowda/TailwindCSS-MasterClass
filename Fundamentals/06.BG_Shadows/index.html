@@ -27,23 +27,56 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
   </head>
   <body>
+    <!-- Main heading for the demo page -->
     <h1 class="mb-3">Backgrounds and Shadows Demo</h1>
+
+    <!-- Section heading for background examples -->
     <h3 class="mb-2">Backgrounds</h3>
+
+    <!-- Alternative image approach (commented out) -->
     <!-- <img src="../assets/nature.jpg" alt="Nature" class="w-1/2 mb-4 p-4" /> -->
+
+    <!-- Full-screen background image demonstration
+             - h-screen: Full viewport height
+             - w-full: Full width
+             - bg-blue-500: Fallback blue background color
+             - bg-cover: Scales image to cover entire container
+             - bg-no-repeat: Prevents image repetition
+             - bg-center: Centers the background image -->
     <div
       class="h-screen w-full bg-blue-500 bg-cover bg-no-repeat bg-center"
       style="background-image: url('../assets/nature.jpg')"
     ></div>
 
+    <!-- Section heading for shadow examples -->
     <h1>Shadows</h1>
+
+    <!-- Container for shadow demonstration cards using flexbox layout -->
     <div class="flex flex-wrap mb-10">
+      <!-- Medium shadow example -->
       <div class="w-[400px] mt-10 ml-4 p-3 shadow-md">Shadow Medium</div>
+
+      <!-- Large shadow example -->
       <div class="w-[400px] mt-10 ml-4 p-3 shadow-lg">Shadow Large</div>
+
+      <!-- Extra large shadow example -->
       <div class="w-[400px] mt-10 ml-4 p-3 shadow-xl">Shadow Extra Large</div>
+
+      <!-- 2XL shadow example (largest standard shadow) -->
       <div class="w-[400px] mt-10 ml-4 p-3 shadow-2xl">Shadow 2XL</div>
 
+      <!-- Inner shadow example (inset shadow effect) -->
       <div class="w-[400px] mt-10 ml-4 p-3 shadow-inner">Shadow Inner</div>
-      <div class="w-[400px] mt-10 ml-4 p-3 shadow-lg shadow-teal-200">Shadow with Color</div>
-      <div class="w-[400px] mt-10 ml-4 p-3 shadow-lg shadow-teal-200/40">Shadow with Color with opacity</div>
+
+      <!-- Colored shadow example using teal-200 -->
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-lg shadow-teal-200">
+        Shadow with Color
+      </div>
+
+      <!-- Colored shadow with opacity example (40% opacity teal-200) -->
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-lg shadow-teal-200/40">
+        Shadow with Color with opacity
+      </div>
+    </div>
   </body>
 </html>
