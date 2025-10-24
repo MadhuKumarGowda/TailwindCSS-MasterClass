@@ -1,0 +1,81 @@
+<!--
+    Position and Display Demo
+    
+    This HTML file demonstrates various CSS positioning and display properties
+    using Tailwind CSS utility classes. It covers:
+    
+    - Static, relative, absolute, fixed, and sticky positioning
+    - Block, inline, inline-block, flex, and grid display types
+    - Z-index layering and overflow handling
+    - Responsive positioning and display modifications
+    
+    File: /Users/madhugowda/Projects/Websites/TailwindcssProject/Fundamentals/05.Position_Display/index.html
+    Author: Madhu Gowda
+    Purpose: Learning Tailwind CSS positioning and display fundamentals
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position and Display Demo</title>
+    <!-- Loads Tailwind CSS via CDN for styling using utility classes.
+         Replace with your local build output when using a Tailwind pipeline. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+  </head>
+  <body>
+    <!-- Main heading for the position demonstration section -->
+    <h1 class="mb-3">Position and Display Demo</h1>
+
+    <!-- First example: Relative container with absolute child positioned at bottom-right -->
+    <div class="relative h-40 bg-green-400 w-1/2">
+      <p>Relative</p>
+      <!-- Absolute positioned element anchored to bottom-right of relative parent -->
+      <div class="absolute bottom-0 right-0 bg-teal-500 p-4">
+        <p>Absolute</p>
+      </div>
+    </div>
+
+    <!-- Second example: Relative container with absolute child positioned at top-left -->
+    <div class="relative h-40 bg-green-400 w-1/2 mt-4">
+      <p>Relative</p>
+      <!-- Absolute positioned element anchored to top-left of relative parent -->
+      <div class="absolute left-0 top-0 bg-teal-500 p-4">
+        <p>Absolute</p>
+      </div>
+    </div>
+
+    <!-- Third example: Relative container with absolute child positioned at top-right -->
+    <div class="relative h-40 bg-green-400 w-1/2 mt-4">
+      <p>Relative</p>
+      <!-- Absolute positioned element anchored to top-right of relative parent -->
+      <div class="absolute right-0 top-0 bg-teal-500 p-4">
+        <p>Absolute</p>
+      </div>
+    </div>
+
+    <!-- Section break -->
+    <br />
+    <hr />
+
+    <!-- Main heading for the display properties demonstration section -->
+    <h1 class="mb-3">Display Demo</h1>
+
+    <!-- Container demonstrating different display types -->
+    <div class="bg-indigo-400 p-10 mb-10 w-[600px]">
+      <!-- Inline display: flows with text, no line breaks, width/height ignored -->
+      <span class="inline"
+        >1. This is display inline and will wrap normally</span
+      >
+      <!-- Inline-block display: flows with text but respects width/height -->
+      <span class="inline-block"
+        >2. This is display inline-block and will not extend beyond it's
+        parent</span
+      >
+      <!-- Block display: takes full width, forces line break -->
+      <span class="block">
+        3. This is display block and will move to its own line
+      </span>
+    </div>
+  </body>
+</html>
