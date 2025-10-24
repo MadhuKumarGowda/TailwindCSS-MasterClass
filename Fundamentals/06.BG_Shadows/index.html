@@ -1,0 +1,49 @@
+<!-- 
+    Tailwind CSS Backgrounds and Shadows Demo
+    
+    This file demonstrates various Tailwind CSS utilities for:
+    - Background colors, gradients, and images
+    - Box shadows and drop shadows
+    - Background positioning and sizing
+    - Shadow color customization
+    
+    File: /Users/madhugowda/Projects/Websites/TailwindcssProject/Fundamentals/06.BG_Shadows/index.html
+    Purpose: Educational examples of Tailwind's background and shadow utilities
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Sets character encoding to UTF-8 for proper text display -->
+    <meta charset="UTF-8" />
+
+    <!-- Ensures responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title displayed in browser tab -->
+    <title>Backgrounds and Shadows Demo</title>
+
+    <!-- Loads Tailwind CSS via CDN for styling using utility classes.
+         Replace with your local build output when using a Tailwind pipeline. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+  </head>
+  <body>
+    <h1 class="mb-3">Backgrounds and Shadows Demo</h1>
+    <h3 class="mb-2">Backgrounds</h3>
+    <!-- <img src="../assets/nature.jpg" alt="Nature" class="w-1/2 mb-4 p-4" /> -->
+    <div
+      class="h-screen w-full bg-blue-500 bg-cover bg-no-repeat bg-center"
+      style="background-image: url('../assets/nature.jpg')"
+    ></div>
+
+    <h1>Shadows</h1>
+    <div class="flex flex-wrap mb-10">
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-md">Shadow Medium</div>
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-lg">Shadow Large</div>
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-xl">Shadow Extra Large</div>
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-2xl">Shadow 2XL</div>
+
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-inner">Shadow Inner</div>
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-lg shadow-teal-200">Shadow with Color</div>
+      <div class="w-[400px] mt-10 ml-4 p-3 shadow-lg shadow-teal-200/40">Shadow with Color with opacity</div>
+  </body>
+</html>
